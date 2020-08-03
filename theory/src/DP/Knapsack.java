@@ -172,7 +172,13 @@ public class Knapsack {
      *  同0-1背包类似，我们先用dp[i][j] 来表示从前i个物品中，选取总重量为j的物品所能够得到的最大价值，然后我们来推状态转移方程
      *  很轻松就能得到：
      *
-     *  0. dp[i][j] = max(dp[i][j],dp[i-1][j - k*w[i]] + k*v[i]) ( min(j/w[i],m[i]) >= k >=0)
+     *  0. dp[i][j] = max(dp[i-1][j - k*w[i]] + k*v[i]) ( min(j/w[i],m[i]) >= k >=0)
+     *
+     *  如果 m[i] * w[i] >= j，则同完全背包完全一致
+     *
+     *      1. dp[i][j] = max(dp[i-1][j],dp[i][j-w[i]]+v[i])
+     *  如果 m[i] * w[i] < j,则
+     *      2. dp[i][j] = max(dp[i-1][j - k*w[i]] + k*v[i]) ( m[i] >= k >=0)
      *
      */
     private void solution3(){
