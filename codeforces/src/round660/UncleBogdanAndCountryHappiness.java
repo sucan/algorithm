@@ -3,10 +3,31 @@ package round660;
 import java.util.*;
 
 /**
+ * codeforce link：https://codeforces.com/contest/1388/problem/C
  * Created by enpingkuang on 2020/8/3 9:39 PM
  */
 public class UncleBogdanAndCountryHappiness {
 
+
+    /**
+     *
+     * 按照题意上说的，h的取值只需要满足两个条件，就一定能有解：
+     *
+     *  1.对于任意一个节点，它的h[i]必须得是合法的
+     *  2.对于任意一个节点，通过它时好心情的人数一定是大于通过它的所有子节点的好心情的人数的
+     *  因为从一个节点到另一个节点的过程中，好心情的人数是只可能变少，不可能变多的
+     *
+     *
+     * 同时我们假设经过一个节点的总人数为m,好心情的人的人数为x，坏心情的人数为y，那么可以得到如下式子：
+     *
+     * 1. x+y = m
+     * 2. x-y = h
+     *
+     * => x = (m+h)/2
+     * 而x的取值范围为 m >= x >= 0,并且x一定为整数，通过这个式子我们就能计算出x的取值了
+     *
+     *
+     */
     private static int[] p = new int[100005];
     private static int[] h = new int[100005];
     private static boolean[] vis = new boolean[100005];
