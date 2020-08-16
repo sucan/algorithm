@@ -15,8 +15,6 @@ public class Heap {
     /**
      * 插入到数组末尾，然后不停向上回溯
      *
-     * value >= 0
-     *
      */
     private static void push(int value){
         int i = index++;
@@ -52,6 +50,11 @@ public class Heap {
     }
 
     public static void main(String[] args){
-
+        for(int i = 10;i>=0;i--){
+            push(i);
+        }
+        for(int i = 0;i<10;i++){
+            System.out.println(pop());
+        }
     }
 }
