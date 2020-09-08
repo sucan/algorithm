@@ -5,4 +5,5 @@ package datastructure.queue;
  * Created by enpingkuang on 2020/8/2 1:15 AM
  */
 public class PriorityQueue {
+ //采用堆实现
 }
