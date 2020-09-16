@@ -100,7 +100,7 @@ public class F {
             }else {
                 dis = query(1, 1, w, a - 1, a - 1);
             }
-            update(1, 1, w, a,b,dis+1,a);
+            update(1, 1, w, a,b,dis,a-1);
             System.out.println(segmentTree[1] > w?-1:segmentTree[1]+i+1);
         }
     }
