@@ -1,7 +1,6 @@
-package rating1400;
+package pratice.rating1400;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class C515 {

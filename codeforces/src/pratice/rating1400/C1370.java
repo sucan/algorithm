@@ -1,4 +1,4 @@
-package rating1400;
+package pratice.rating1400;
 
 import java.util.Scanner;
 

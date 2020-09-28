@@ -1,6 +1,5 @@
-package rating1400;
+package pratice.rating1400;
 
-import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
