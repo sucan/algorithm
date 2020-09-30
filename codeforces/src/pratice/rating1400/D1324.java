@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
- * 此题用scanner会超时，因此需要使用BufferedReader和StringTokenizer 进行加速
+ * 此题用Arrays.sort(int[] )会超时，需要使用Arrays.sort(Integer[] )
  */
 public class D1324 {
     private static final int MAX_N = 200001;
