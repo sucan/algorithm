@@ -20,6 +20,9 @@ import java.io.*;
  * 因为此题规模不大，同时有LCM(a,b) 一定能够整除a，b,换而言之a，b的所有组合一定是LCM(a,b)的约数
  * 因此只需要枚举x的所有约数，然后判断 LCM(a,x/a) 是否等于x即可
  *
+ *
+ * 这类gcd和lcm相关的题目，一定要思考清楚质因数分解后的情形，想明白gcd本质就是两数相同质因数乘积
+ *
  */
 public class C1285 {
     private static final int MAX_N = 1000000;
