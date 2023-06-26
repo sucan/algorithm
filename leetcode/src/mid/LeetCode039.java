@@ -10,8 +10,6 @@ import java.util.List;
  */
 public class LeetCode039 {
 
-    static boolean[][] dp = new boolean[31][501];
-
     public static List<List<Integer>> findPath(int[] candidates,int index,int target){
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> tmp = new ArrayList<>();
@@ -20,14 +18,15 @@ public class LeetCode039 {
                 for(int i = 0;i<target/candidates[0];i++){
                     tmp.add(candidates[0]);
                 }
+                result.add(tmp);
+                return result;
             }
-            result.add(tmp);
-            return result;
+            return null;
         }
         for(int i = 0;i*candidates[index] <= target;i++){
-            if(dp[index-1][target-i*candidates[index]]){
-                List<List<Integer>> tmpResult = findPath(candidates,index-1,target-i*candidates[index]);
-                for(List<Integer> sub:tmpResult){
+            List<List<Integer>> tmpResult = findPath(candidates, index - 1, target - i * candidates[index]);
+            if(tmpResult != null) {
+                for (List<Integer> sub : tmpResult) {
                     sub.addAll(tmp);
                 }
                 result.addAll(tmpResult);
@@ -38,21 +37,11 @@ public class LeetCode039 {
     }
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
-        for(int i = 0;i*candidates[0]<= 500 ;i++) {
-            dp[0][candidates[0]*i] = true;
-        }
-        for(int i = 1;i<candidates.length;i++){
-            for(int j = 0;j<=500;j++){
-                dp[i][j] |= dp[i-1][j];
-                if(j>=candidates[i]){
-                    dp[i][j] |= dp[i][j-candidates[i]];
-                }
-            }
-        }
-        if(!dp[candidates.length-1][target]){
+        List<List<Integer>> result = findPath(candidates,candidates.length-1,target);
+        if(result == null){
             return new ArrayList<>();
         }
-        return findPath(candidates,candidates.length-1,target);
+        return result;
     }
 
     public static void main(String[] args) {
