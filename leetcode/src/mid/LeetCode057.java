@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class LeetCode057 {
     public int[][] insert(int[][] intervals, int[] newInterval) {
-        int[][] result = new int[intervals.length][2];
+        int[][] result = new int[intervals.length+1][2];
         int tmp = 0;
         int inserted = 0;
         int mergeNum = 0;
@@ -38,6 +38,18 @@ public class LeetCode057 {
                     }
                 }
                 i++;
+            }
+        }
+        if(inserted == 0){
+            if(tmp == 0){
+                result[tmp++] =  newInterval;
+            }else{
+                if(checkIntersect(result[tmp-1],newInterval) == 0){
+                    result[tmp-1][1] =Math.max(result[tmp-1][1],newInterval[1]);
+                    mergeNum++;
+                }else{
+                    result[tmp++] = newInterval;
+                }
             }
         }
         return Arrays.copyOf(result,intervals.length + 1 - mergeNum);

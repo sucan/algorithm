@@ -10,7 +10,7 @@ import java.util.Queue;
  * @Date: 2022/9/1 00:39
  * @Description:
  */
-public class LeetCode132 {
+public class LeetCode133 {
 
     class Node {
         public int val;
@@ -49,7 +49,6 @@ public class LeetCode132 {
         for(Node neighbor:node.neighbors){
             Node cloneNeighbor = cloneNode(neighbor);
             cloneNode.neighbors.add(cloneNeighbor);
-            cloneNeighbor.neighbors.add(cloneNode);
         }
         return cloneNode;
     }

@@ -20,7 +20,7 @@ public class LeetCode074 {
             }
         }
         targetRow = r;
-        if(target == -1){
+        if(targetRow == -1){
             return false;
         }
         l = 0;

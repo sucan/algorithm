@@ -8,14 +8,20 @@ package mid;
 public class LeetCode055 {
 
     public boolean canJump(int[] nums) {
-        int maxLength = nums[0] + 0;
-        for(int i = 0;i<nums.length-1;i++){
-            if(i > maxLength){
+        int start = 0;
+        int maxLength = nums[start] + start;
+        while (maxLength < nums.length-1){
+            int tmpIndex = start;
+            for(int i = start;i<=start+nums[start];i++){
+                if(nums[i] + i > maxLength){
+                    maxLength = nums[i] + i;
+                    tmpIndex = i;
+                }
+            }
+            if(tmpIndex == start){
                 return false;
             }
-            if(i + nums[i] >maxLength){
-                maxLength = i + nums[i];
-            }
+            start = tmpIndex;
         }
         return true;
     }

@@ -5,7 +5,7 @@ package mid;
  * @Date: 2021/9/6 22:11
  * @Description:
  */
-public class LeetCode041 {
+public class LeetCode043 {
     static char[] ans = new char[401];
     static int[] jingWei = new int[401];
     public static String multiply(String num1, String num2) {

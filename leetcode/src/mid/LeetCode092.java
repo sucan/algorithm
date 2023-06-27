@@ -25,7 +25,7 @@ public class LeetCode092 {
 
     public ListNode reverseBetween(ListNode head, int left, int right) {
         ListNode leftPre = null;
-        ListNode rightNext  = null;
+        ListNode rightNext  = head.next;
         ListNode leftNode = head;
         ListNode rightNode = head;
         for(int i = 1;i<right;i++){

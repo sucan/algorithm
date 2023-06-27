@@ -38,6 +38,10 @@ public class LeetCode143 {
         for(int i = 0;i<=j;i++,j--){
             ListNode l1 =  arrayList.get(i);
             ListNode l2 = arrayList.get(j);
+            if(l1 == l2){
+                l1.next = null;
+                continue;
+            }
             ListNode next = l1.next;
             l1.next = l2;
             l2.next = null;

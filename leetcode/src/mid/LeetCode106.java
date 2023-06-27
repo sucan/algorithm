@@ -42,7 +42,7 @@ public class LeetCode106 {
         TreeNode node = new TreeNode(postorder[pr]);
         int imid = 0;
         for(int i = il;i<=ir;i++){
-            if(inorder[i] == postorder[pl]){
+            if(inorder[i] == postorder[pr]){
                 imid = i;
                 break;
             }
