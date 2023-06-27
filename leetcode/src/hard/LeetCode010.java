@@ -1,4 +1,4 @@
-package mid;
+package hard;
 
 public class LeetCode010 {
     /**

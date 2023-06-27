@@ -5,7 +5,7 @@ package mid;
  * @Date: 2022/4/22 21:07
  * @Description:
  */
-public class LeetCode058 {
+public class LeetCode059 {
 
     class Point{
 
