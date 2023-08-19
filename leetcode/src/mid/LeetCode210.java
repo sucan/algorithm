@@ -4,12 +4,11 @@ import java.util.*;
 
 /**
  * @Auther: kep
- * @Date: 2023/8/6 19:36
+ * @Date: 2023/8/17 21:32
  * @Description:
  */
-public class LeetCode207 {
-
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
+public class LeetCode210 {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] ans = new int[numCourses];
         Set<Integer>[] edge = new HashSet[numCourses+1];
         int[]  inDegree = new int[numCourses+1];
@@ -49,8 +48,12 @@ public class LeetCode207 {
             }
         }
         if(index != numCourses){
-            return false;
+            return new int[0];
         }
-        return true;
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        new LeetCode210().findOrder(4,new int[][]{{1,0},{2,0},{3,1},{3,2}});
     }
 }
